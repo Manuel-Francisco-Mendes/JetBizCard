@@ -17,8 +17,11 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.jetbizcard.ui.theme.JetBizCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -62,6 +65,20 @@ fun CreateBizCard(){
                     Divider(modifier = Modifier
                         .padding(0.dp,5.dp,0.dp,5.dp),
                         thickness = 2.dp)
+                    
+                    Column(verticalArrangement = Arrangement.Top,
+                        horizontalAlignment = Alignment.Start) {
+
+                        Text(text = "Miles P.",
+                            color = MaterialTheme.colors.primaryVariant,
+                            style = MaterialTheme.typography.h4)
+
+                        Text(text = "Android Composer Programmer")
+
+                        Text(text = "@GiftMendes",
+                            style = MaterialTheme.typography.subtitle1)
+
+                    }
 
                 }
             }

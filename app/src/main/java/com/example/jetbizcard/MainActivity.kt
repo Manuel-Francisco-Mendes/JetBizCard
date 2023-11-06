@@ -1,6 +1,7 @@
 package com.example.jetbizcard
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -65,19 +66,17 @@ fun CreateBizCard(){
                     Divider(modifier = Modifier
                         .padding(0.dp,5.dp,0.dp,5.dp),
                         thickness = 2.dp)
-                    
-                    Column(verticalArrangement = Arrangement.Top,
-                        horizontalAlignment = Alignment.Start) {
 
-                        Text(text = "Miles P.",
-                            color = MaterialTheme.colors.primaryVariant,
-                            style = MaterialTheme.typography.h4)
+                    CreateInfo()
 
-                        Text(text = "Android Composer Programmer")
-
-                        Text(text = "@GiftMendes",
-                            style = MaterialTheme.typography.subtitle1)
-
+                    Button(onClick = {
+                        Log.d("You Clicked", "CreateBizCard: ")
+                    },
+                        modifier = Modifier.padding(25.dp)) {
+                        
+                        Text(text = "Portifólio",
+                        style = MaterialTheme.typography.button)
+                        
                     }
 
                 }
@@ -87,6 +86,29 @@ fun CreateBizCard(){
 
     }
 
+}
+
+@Composable
+private fun CreateInfo() {
+    Column(
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
+    ) {
+
+        Text(
+            text = "Miles P.",
+            color = MaterialTheme.colors.primaryVariant,
+            style = MaterialTheme.typography.h4
+        )
+
+        Text(text = "Android Composer Programmer")
+
+        Text(
+            text = "@GiftMendes",
+            style = MaterialTheme.typography.subtitle1
+        )
+
+    }
 }
 
 @Composable

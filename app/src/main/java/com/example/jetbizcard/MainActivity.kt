@@ -50,7 +50,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CreateBizCard(){
 
-
+    var buttonClickedState = remember{
+            mutableStateOf(false)
+    }
 
     Surface(modifier = Modifier
         .fillMaxWidth()
@@ -75,7 +77,7 @@ fun CreateBizCard(){
                     CreateInfo()
 
                     Button(onClick = {
-
+                        buttonClickedState.value = !buttonClickedState.value
                     },
                         modifier = Modifier.padding(25.dp)) {
                         
@@ -84,7 +86,17 @@ fun CreateBizCard(){
                         
                     }
 
-                    CardContent()
+                    if(buttonClickedState.value){
+                        CardContent()
+                    }else{
+
+                        Text(text = "Projects hided!",
+                            style = MaterialTheme.typography.h4,
+                            color = Color.Gray,
+                            fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(15.dp,100.dp))
+
+                    }
 
 
 
